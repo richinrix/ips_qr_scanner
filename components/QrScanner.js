@@ -3,7 +3,7 @@ import Html5QrcodePlugin from "../services/QrcodePlugin";
 // import Result from "./Result";
 class Scanner extends React.Component {
   state = {
-    qrCode: true,
+    qrCode: false,
   };
 
   constructor(props) {
@@ -29,14 +29,19 @@ class Scanner extends React.Component {
           qrCodeSuccessCallback={this.onNewScanResult}
         />
 
-        <div class=" text-xl mt-5">{this.state.qrCode}</div>
         {this.state.qrCode && (
-          <a
-            href={`/order/${this.state.qrCode}`}
-            class="my-2 bg-black text-white text-center px-3 py-2 rounded-md"
-          >
-            Confirm
-          </a>
+          <div className="w-full h-full shadow-md px-4 py-3 flex flex-col my-5 items-center justify-center">
+            <div class="flex items-center justify-between w-full my-5">
+              <div>Order ID</div>
+              <div class="text-sm">{this.state.qrCode}</div>
+            </div>
+            <a
+              href={`/order/${this.state.qrCode}`}
+              class="my-2 bg-black text-white text-center px-3 py-2 rounded-md"
+            >
+              Confirm
+            </a>
+          </div>
         )}
         {/* <Result QrResult={this.state.qrCode} /> */}
       </div>
