@@ -20,14 +20,15 @@ class Scanner extends React.Component {
 
   render() {
     return (
-      <div className=" flex flex-col items-center justify-center text-white">
+      <div className=" flex flex-col items-center justify-center ">
         <Html5QrcodePlugin
+          className="flex justify-center"
           fps={10}
           qrbox={250}
           disableFlip={false}
           qrCodeSuccessCallback={this.onNewScanResult}
         />
-        <div class="text-white text-xl mt-5">{this.state.qrCode}</div>
+        <div class=" text-xl mt-5">{this.state.qrCode}</div>
         {/* <Result QrResult={this.state.qrCode} /> */}
       </div>
     );
