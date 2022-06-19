@@ -6,3 +6,10 @@ function MyApp({ Component, pageProps }: AppProps) {
 }
 
 export default MyApp
+
+
+// TODO : 
+// login screen
+//  scanner 
+// onscan a page showing details of product
+// post tracking id  to graphcms
